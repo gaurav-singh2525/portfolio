@@ -42,10 +42,10 @@ export function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="gradient-text">GAURAV</span>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-none tracking-[-0.04em]">
+              <span className="text-white">GAURAV</span>
               <br />
-              <span className="text-white">SINGH</span>
+              <span className="text-neutral-400">SINGH</span>
             </h1>
           </FadeIn>
 
@@ -63,9 +63,9 @@ export function Hero() {
 
           <FadeIn delay={0.4}>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/50 sm:text-lg">
-              I love to learn how real infrastructure works and built backend systems
-              — from TCP sockets and thread pools in C++ to
-              distributed job queues and real-time WebSocket applications.
+              I love to learn how real infrastructure works and built backend
+              systems — from TCP sockets and thread pools in C++ to distributed
+              job queues and real-time WebSocket applications.
             </p>
           </FadeIn>
 
