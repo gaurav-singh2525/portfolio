@@ -35,34 +35,34 @@ export function Hero() {
       <div className="section-container relative z-10 px-4 pt-24 pb-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <FadeIn delay={0.1}>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/70 backdrop-blur-sm">
-              <GraduationCap className="h-3.5 w-3.5 text-accent-cyan" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-text-secondary shadow-card">
+              <GraduationCap className="h-3.5 w-3.5 text-accent" />
               IIT Jodhpur · B.Tech EE
             </div>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-none tracking-[-0.04em]">
-              <span className="text-white">GAURAV</span>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-[-0.04em]">
+              <span className="text-text-primary">Gaurav</span>
               <br />
-              <span className="text-neutral-400">SINGH</span>
+              <span className="text-text-tertiary">Singh</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <p className="mx-auto mt-6 max-w-2xl font-display text-lg font-medium text-white/80 sm:text-xl md:text-2xl">
+            <p className="mx-auto mt-6 max-w-2xl font-display text-lg font-medium text-text-secondary sm:text-xl md:text-2xl leading-relaxed">
               Love{" "}
-              <span className="text-accent-cyan">
+              <span className="text-text-primary font-semibold">
                 exploring new technologies
               </span>{" "}
               and constantly learning through{" "}
-              <span className="text-accent-purple">curiosity </span>, and{" "}
-              <span className="text-accent-green">experimentation.</span>
+              <span className="text-text-primary font-semibold">curiosity</span>, and{" "}
+              <span className="text-text-primary font-semibold">experimentation.</span>
             </p>
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/50 sm:text-lg">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-text-tertiary sm:text-lg">
               I love to learn how real infrastructure works and built backend
               systems — from TCP sockets and thread pools in C++ to distributed
               job queues and real-time WebSocket applications.
@@ -76,10 +76,10 @@ export function Hero() {
                 return (
                   <div
                     key={stat.label}
-                    className="glass flex items-center gap-2 rounded-xl px-4 py-2.5"
+                    className="card flex items-center gap-2 rounded-full px-4 py-2.5"
                   >
-                    <Icon className="h-4 w-4 text-accent-cyan" />
-                    <span className="text-sm font-medium text-white/80">
+                    <Icon className="h-4 w-4 text-accent" />
+                    <span className="text-sm font-medium text-text-secondary">
                       {stat.label}
                     </span>
                   </div>
@@ -113,12 +113,12 @@ export function Hero() {
 
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 8, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
           <a
             href="#about"
-            className="flex flex-col items-center gap-2 text-white/30 transition-colors hover:text-white/60"
+            className="flex flex-col items-center gap-2 text-text-tertiary transition-colors hover:text-text-secondary"
             aria-label="Scroll to about section"
           >
             <span className="text-xs uppercase tracking-widest">Scroll</span>

@@ -52,16 +52,16 @@ export function Navbar() {
         className={cn(
           "mx-auto flex max-w-6xl items-center justify-between px-4 transition-all duration-300 sm:px-6",
           scrolled
-            ? "glass rounded-2xl border border-white/10 px-6 py-3 shadow-glass"
+            ? "rounded-2xl border border-border bg-surface/80 px-6 py-3 shadow-nav backdrop-blur-xl"
             : "px-4 py-0"
         )}
       >
         <a
           href="#home"
-          className="flex items-center gap-2 font-display text-lg font-bold text-white"
+          className="flex items-center gap-2 font-display text-lg font-bold text-text-primary"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-cyan/20 to-accent-purple/20 border border-accent-cyan/30">
-            <Terminal className="h-4 w-4 text-accent-cyan" />
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-text-primary">
+            <Terminal className="h-4 w-4 text-surface" />
           </span>
           <span className="hidden sm:inline"></span>
         </a>
@@ -72,13 +72,20 @@ export function Navbar() {
               <a
                 href={link.href}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200",
+                  "relative rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200",
                   activeSection === link.href.slice(1)
-                    ? "text-accent-cyan"
-                    : "text-white/60 hover:text-white"
+                    ? "text-text-primary"
+                    : "text-text-tertiary hover:text-text-primary"
                 )}
               >
                 {link.label}
+                {activeSection === link.href.slice(1) && (
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute -bottom-0.5 left-3 right-3 h-0.5 rounded-full bg-text-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </a>
             </li>
           ))}
@@ -86,14 +93,14 @@ export function Navbar() {
 
         <a
           href="#contact"
-          className="hidden rounded-xl border border-accent-cyan/30 bg-accent-cyan/10 px-4 py-2 text-sm font-medium text-accent-cyan transition-all hover:bg-accent-cyan/20 md:inline-flex"
+          className="hidden rounded-button border border-accent bg-accent px-4 py-2 text-sm font-medium text-white transition-all hover:bg-accent-hover md:inline-flex"
         >
           Get in Touch
         </a>
 
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-button border border-border bg-surface md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
@@ -109,7 +116,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="glass mx-4 mt-2 rounded-2xl border border-white/10 p-4 md:hidden"
+            className="mx-4 mt-2 rounded-card border border-border bg-surface p-4 shadow-card-lg md:hidden"
           >
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -118,21 +125,21 @@ export function Navbar() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+                      "block rounded-lg px-4 py-3 text-sm font-medium transition-colors",
                       activeSection === link.href.slice(1)
-                        ? "bg-accent-cyan/10 text-accent-cyan"
-                        : "text-white/70 hover:bg-white/5 hover:text-white"
+                        ? "bg-surface-alt text-text-primary"
+                        : "text-text-secondary hover:bg-surface-alt hover:text-text-primary"
                     )}
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
-              <li className="mt-2 border-t border-white/10 pt-2">
+              <li className="mt-2 border-t border-border pt-2">
                 <a
                   href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="block rounded-xl bg-accent-cyan/10 px-4 py-3 text-center text-sm font-medium text-accent-cyan"
+                  className="block rounded-button bg-accent px-4 py-3 text-center text-sm font-medium text-white"
                 >
                   Get in Touch
                 </a>

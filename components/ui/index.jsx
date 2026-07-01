@@ -13,12 +13,11 @@ export function GlassCard({
   return (
     <motion.div
       className={cn(
-        "glass rounded-2xl",
-        hover && "glass-hover",
-        glow && "hover:shadow-glow",
+        "card",
+        hover && "card-hover",
         className
       )}
-      whileHover={hover ? { y: -4, scale: 1.01 } : undefined}
+      whileHover={hover ? { y: -2 } : undefined}
       transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
       {...props}
     >
@@ -40,11 +39,11 @@ export function Button({
 }) {
   const variants = {
     primary:
-      "bg-gradient-to-r from-accent-cyan/20 to-accent-purple/20 border-accent-cyan/30 text-white hover:from-accent-cyan/30 hover:to-accent-purple/30 hover:shadow-glow hover:border-accent-cyan/50",
+      "bg-accent text-white border-accent hover:bg-accent-hover hover:border-accent-hover",
     secondary:
-      "bg-white/5 border-white/10 text-white/90 hover:bg-white/10 hover:border-white/20",
+      "bg-surface text-text-primary border-border hover:bg-surface-alt hover:border-border-strong",
     ghost:
-      "bg-transparent border-transparent text-white/70 hover:text-white hover:bg-white/5",
+      "bg-transparent border-transparent text-text-secondary hover:text-text-primary hover:bg-surface-alt",
   };
 
   const sizes = {
@@ -54,7 +53,7 @@ export function Button({
   };
 
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-xl border font-medium transition-all duration-300",
+    "inline-flex items-center justify-center gap-2 rounded-button border font-medium transition-all duration-200",
     variants[variant],
     sizes[size],
     className
@@ -92,16 +91,16 @@ export function Button({
 
 export function Badge({ children, className = "", color = "cyan" }) {
   const colors = {
-    cyan: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/20",
-    purple: "bg-accent-purple/10 text-accent-purple border-accent-purple/20",
-    green: "bg-accent-green/10 text-accent-green border-accent-green/20",
-    neutral: "bg-white/5 text-white/70 border-white/10",
+    cyan: "bg-accent-light text-accent border-accent/15",
+    purple: "bg-accent-light text-accent border-accent/15",
+    green: "bg-accent-light text-accent border-accent/15",
+    neutral: "bg-surface-alt text-text-secondary border-border",
   };
 
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-lg border px-2.5 py-1 text-xs font-medium",
+        "inline-flex items-center rounded-badge border px-2.5 py-1 text-xs font-medium",
         colors[color],
         className
       )}
@@ -113,17 +112,17 @@ export function Badge({ children, className = "", color = "cyan" }) {
 
 export function SectionHeading({ label, title, description, className = "" }) {
   return (
-    <div className={cn("mb-12 text-center md:mb-16", className)}>
+    <div className={cn("mb-16 text-center md:mb-20", className)}>
       {label && (
-        <p className="mb-3 font-mono text-xs uppercase tracking-widest text-accent-cyan/80">
+        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-accent">
           {label}
         </p>
       )}
-      <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+      <h2 className="font-display text-3xl font-bold tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description && (
-        <p className="mx-auto mt-4 max-w-2xl text-base text-white/60 sm:text-lg">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">
           {description}
         </p>
       )}

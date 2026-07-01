@@ -5,32 +5,30 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-background text-white antialiased;
+    @apply bg-background text-text-primary;
   }
 
   ::selection {
-    @apply bg-accent-purple/30 text-white;
+    @apply bg-accent/20 text-text-primary;
   }
 }
 
 @layer components {
-  .glass {
-    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  .card {
+    @apply rounded-card border border-border bg-surface shadow-card;
   }
 
-  .glass-hover {
-    @apply transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06];
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-accent-cyan via-accent-purple to-accent-green bg-clip-text text-transparent;
+  .card-hover {
+    @apply transition-all duration-300 hover:border-border-strong hover:shadow-card-hover;
   }
 
   .section-padding {
-    @apply px-4 py-20 sm:px-6 lg:px-8 lg:py-28;
+    @apply px-4 py-24 sm:px-6 lg:px-8 lg:py-32;
   }
 
   .section-container {

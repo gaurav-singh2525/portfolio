@@ -8,40 +8,45 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#050816",
+        background: "#FAFAFA",
+        surface: "#FFFFFF",
+        "surface-alt": "#F5F5F7",
+        border: "#E5E5E5",
+        "border-strong": "#D2D2D7",
+        "text-primary": "#1D1D1F",
+        "text-secondary": "#6E6E73",
+        "text-tertiary": "#86868B",
         accent: {
-          cyan: "#00E5FF",
-          purple: "#7C3AED",
-          green: "#00FFA3",
+          DEFAULT: "#0071E3",
+          hover: "#0077ED",
+          light: "#E8F0FE",
+          subtle: "#F0F5FF",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-glow":
-          "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 58, 237, 0.3), transparent)",
-      },
       boxShadow: {
-        glow: "0 0 40px rgba(0, 229, 255, 0.15)",
-        "glow-purple": "0 0 40px rgba(124, 58, 237, 0.2)",
-        "glow-green": "0 0 40px rgba(0, 255, 163, 0.15)",
-        glass: "0 8px 32px rgba(0, 0, 0, 0.4)",
+        card: "0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04)",
+        "card-hover":
+          "0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04)",
+        "card-lg":
+          "0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)",
+        nav: "0 1px 3px rgba(0, 0, 0, 0.06)",
+      },
+      borderRadius: {
+        card: "12px",
+        button: "10px",
+        badge: "8px",
       },
       animation: {
-        float: "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
+        "fade-in": "fadeIn 0.6s ease-out forwards",
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "0.4" },
-          "50%": { opacity: "0.8" },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

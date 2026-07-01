@@ -43,9 +43,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding relative">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-accent-purple/5 to-transparent" />
-
+    <section id="contact" className="section-padding relative bg-surface-alt">
       <div className="section-container relative">
         <FadeIn>
           <SectionHeading
@@ -60,7 +58,7 @@ export function Contact() {
             <GlassCard className="p-6 sm:p-8" glow>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-white/70">
+                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-text-secondary">
                     Name
                   </label>
                   <input
@@ -71,12 +69,12 @@ export function Contact() {
                     value={formState.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 transition-colors focus:border-accent-cyan/50 focus:outline-none focus:ring-1 focus:ring-accent-cyan/30"
+                    className="w-full rounded-button border border-border bg-surface px-4 py-3 text-text-primary placeholder-text-tertiary transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/30"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-white/70">
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-text-secondary">
                     Email
                   </label>
                   <input
@@ -87,12 +85,12 @@ export function Contact() {
                     value={formState.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 transition-colors focus:border-accent-cyan/50 focus:outline-none focus:ring-1 focus:ring-accent-cyan/30"
+                    className="w-full rounded-button border border-border bg-surface px-4 py-3 text-text-primary placeholder-text-tertiary transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/30"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/70">
+                  <label htmlFor="message" className="mb-2 block text-sm font-medium text-text-secondary">
                     Message
                   </label>
                   <textarea
@@ -103,7 +101,7 @@ export function Contact() {
                     value={formState.message}
                     onChange={handleChange}
                     placeholder="Your message here..."
-                    className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 transition-colors focus:border-accent-cyan/50 focus:outline-none focus:ring-1 focus:ring-accent-cyan/30"
+                    className="w-full resize-none rounded-button border border-border bg-surface px-4 py-3 text-text-primary placeholder-text-tertiary transition-colors focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/30"
                   />
                 </div>
 
@@ -133,19 +131,19 @@ export function Contact() {
           <FadeIn direction="right" delay={0.2} className="lg:col-span-2">
             <div className="space-y-4">
               <GlassCard className="p-6">
-                <h3 className="font-display text-lg font-semibold text-white">
+                <h3 className="font-display text-lg font-semibold text-text-primary">
                   Direct Contact
                 </h3>
                 <div className="mt-4 space-y-4">
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="flex items-center gap-3 text-white/60 transition-colors hover:text-accent-cyan"
+                    className="flex items-center gap-3 text-text-secondary transition-colors hover:text-accent"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-                      <Mail className="h-4 w-4 text-accent-cyan" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface-alt">
+                      <Mail className="h-4 w-4 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/40">Email</p>
+                      <p className="text-xs text-text-tertiary">Email</p>
                       <p className="text-sm">{siteConfig.email}</p>
                     </div>
                   </a>
@@ -154,13 +152,13 @@ export function Contact() {
                     href={socialLinks.linkedin.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-white/60 transition-colors hover:text-accent-cyan"
+                    className="flex items-center gap-3 text-text-secondary transition-colors hover:text-accent"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface-alt">
                       <Linkedin className="h-4 w-4 text-[#0A66C2]" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/40">LinkedIn</p>
+                      <p className="text-xs text-text-tertiary">LinkedIn</p>
                       <p className="text-sm">@{socialLinks.linkedin.username}</p>
                     </div>
                   </a>
@@ -169,13 +167,13 @@ export function Contact() {
                     href={socialLinks.github.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-white/60 transition-colors hover:text-accent-cyan"
+                    className="flex items-center gap-3 text-text-secondary transition-colors hover:text-accent"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
-                      <Github className="h-4 w-4" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface-alt">
+                      <Github className="h-4 w-4 text-text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/40">GitHub</p>
+                      <p className="text-xs text-text-tertiary">GitHub</p>
                       <p className="text-sm">@{socialLinks.github.username}</p>
                     </div>
                   </a>
@@ -184,12 +182,12 @@ export function Contact() {
 
               <GlassCard className="p-6">
                 <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-accent-purple" />
+                  <MapPin className="h-5 w-5 text-accent" />
                   <div>
-                    <p className="text-sm font-medium text-white">
+                    <p className="text-sm font-medium text-text-primary">
                       IIT Jodhpur
                     </p>
-                    <p className="text-xs text-white/40">
+                    <p className="text-xs text-text-tertiary">
                        Rajasthan, India
                     </p>
                   </div>
@@ -197,11 +195,11 @@ export function Contact() {
               </GlassCard>
 
               <motion.div
-                className="rounded-2xl border border-accent-cyan/20 bg-accent-cyan/5 p-6"
+                className="rounded-card border border-accent/15 bg-accent-subtle p-6"
                 whileHover={{ scale: 1.01 }}
               >
-                <p className="text-sm leading-relaxed text-white/60">
-                  "It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward."
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  &ldquo;It ain&apos;t about how hard you hit. It&apos;s about how hard you can get hit and keep moving forward.&rdquo;
                 </p>
               </motion.div>
             </div>

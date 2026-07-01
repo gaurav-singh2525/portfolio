@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans bg-background text-text-primary antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

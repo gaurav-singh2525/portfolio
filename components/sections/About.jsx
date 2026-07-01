@@ -51,21 +51,21 @@ export function About() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <FadeIn direction="left">
             <div className="space-y-6">
-              <p className="text-base leading-relaxed text-white/60 sm:text-lg">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-lg">
                 I&apos;m a 3rd-year Electrical Engineering student at{" "}
-                <span className="text-accent-cyan">IIT Jodhpur</span> (Batch
+                <span className="text-accent font-medium">IIT Jodhpur</span> (Batch
                 2024–2028) with a strong interest in software development —
                 especially backend systems, systems programming, and distributed
                 systems.
               </p>
-              <p className="text-base leading-relaxed text-white/60 sm:text-lg">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-lg">
                 Outside of coding, you'll usually find me listening to music,
                 watching story-driven movies, exploring new places, or playing
                 badminton. I enjoy discovering new experiences, meeting
                 different people, and learning from the stories and perspectives
                 they bring.
               </p>
-              <p className="text-base leading-relaxed text-white/60 sm:text-lg">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-lg">
                 I&apos;m looking forward to get opportunities to work with
                 experienced engineers where I can learn from them and contribute
                 to real world projects.
@@ -78,11 +78,11 @@ export function About() {
               {interests.map((item) => (
                 <StaggerItem key={item.title}>
                   <GlassCard className="p-5" glow>
-                    <item.icon className="mb-3 h-5 w-5 text-accent-purple" />
-                    <h3 className="mb-1 font-display text-sm font-semibold text-white">
+                    <item.icon className="mb-3 h-5 w-5 text-accent" />
+                    <h3 className="mb-1 font-display text-sm font-semibold text-text-primary">
                       {item.title}
                     </h3>
-                    <p className="text-xs leading-relaxed text-white/50">
+                    <p className="text-xs leading-relaxed text-text-tertiary">
                       {item.description}
                     </p>
                   </GlassCard>
@@ -94,11 +94,11 @@ export function About() {
 
         <FadeIn delay={0.3}>
           <div className="mt-16">
-            <h3 className="mb-8 text-center font-display text-xl font-semibold text-white">
+            <h3 className="mb-8 text-center font-display text-xl font-semibold text-text-primary">
               Journey
             </h3>
             <div className="relative">
-              <div className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-accent-cyan/50 via-accent-purple/30 to-transparent md:left-1/2 md:block md:-translate-x-px" />
+              <div className="absolute left-4 top-0 hidden h-full w-px bg-gradient-to-b from-border-strong via-border to-transparent md:left-1/2 md:block md:-translate-x-px" />
 
               <div className="space-y-8">
                 {aboutTimeline.map((item, index) => (
@@ -117,18 +117,18 @@ export function About() {
                         }`}
                       >
                         <GlassCard className="p-6">
-                          <span className="font-mono text-sm text-accent-cyan">
+                          <span className="text-sm font-semibold text-accent">
                             {item.year}
                           </span>
-                          <h4 className="mt-1 font-display text-lg font-semibold text-white">
+                          <h4 className="mt-1 font-display text-lg font-semibold text-text-primary">
                             {item.title}
                           </h4>
-                          <p className="mt-2 text-sm leading-relaxed text-white/50">
+                          <p className="mt-2 text-sm leading-relaxed text-text-tertiary">
                             {item.description}
                           </p>
                         </GlassCard>
                       </div>
-                      <div className="absolute left-4 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-accent-cyan bg-background md:left-1/2 md:block" />
+                      <div className="absolute left-4 top-6 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-accent bg-background md:left-1/2 md:block" />
                     </div>
                   </FadeIn>
                 ))}

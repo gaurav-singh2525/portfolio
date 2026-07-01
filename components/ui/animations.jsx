@@ -11,10 +11,10 @@ export function FadeIn({
   duration = 0.5,
 }) {
   const directions = {
-    up: { y: 24, x: 0 },
-    down: { y: -24, x: 0 },
-    left: { x: 24, y: 0 },
-    right: { x: -24, y: 0 },
+    up: { y: 16, x: 0 },
+    down: { y: -16, x: 0 },
+    left: { x: 16, y: 0 },
+    right: { x: -16, y: 0 },
     none: { x: 0, y: 0 },
   };
 
@@ -57,7 +57,7 @@ export function StaggerItem({ children, className = "" }) {
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 16 },
         visible: {
           opacity: 1,
           y: 0,
