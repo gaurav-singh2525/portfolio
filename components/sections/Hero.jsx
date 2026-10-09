@@ -37,7 +37,7 @@ export function Hero() {
           <FadeIn delay={0.1}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-text-secondary shadow-card">
               <GraduationCap className="h-3.5 w-3.5 text-accent" />
-              IIT Jodhpur · B.Tech EE
+              IIT Jodhpur · B.Tech
             </div>
           </FadeIn>
 
@@ -101,7 +101,7 @@ export function Hero() {
                 external
               >
                 <Download className="h-4 w-4" />
-                Download Resume
+                Resume
               </Button>
               <Button href="#contact" variant="secondary" size="lg">
                 <Mail className="h-4 w-4" />
